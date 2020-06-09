@@ -1,16 +1,16 @@
-let gulp         = require('gulp'),
-	sass         = require('gulp-sass'),
-	browserSync  = require('browser-sync'),
-	concat       = require('gulp-concat'),
-	uglify       = require('gulp-uglify-es').default,
-	cleancss     = require('gulp-clean-css'),
-	autoprefixer = require('gulp-autoprefixer'),
-	rsync        = require('gulp-rsync'),
-	newer        = require('gulp-newer'),
-	rename       = require('gulp-rename'),
-	responsive   = require('gulp-responsive'),
-    del          = require('del');
-    
+var gulp         = require('gulp'),
+		sass         = require('gulp-sass'),
+		browserSync  = require('browser-sync'),
+		concat       = require('gulp-concat'),
+		uglify       = require('gulp-uglify-es').default,
+		cleancss     = require('gulp-clean-css'),
+		autoprefixer = require('gulp-autoprefixer'),
+		rsync        = require('gulp-rsync'),
+		newer        = require('gulp-newer'),
+		rename       = require('gulp-rename'),
+		responsive   = require('gulp-responsive'),
+		del          = require('del');
+
 // Local Server
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -26,7 +26,7 @@ function bsReload(done) { browserSync.reload(); done(); };
 
 // Custom Styles
 gulp.task('styles', function() {
-	return gulp.src('app/scss/**/*.scss')
+	return gulp.src(['app/scss/**/*.scss', 'app/scss/**/*.css'])
 	.pipe(sass({
 		outputStyle: 'expanded',
 		includePaths: [__dirname + '/node_modules']
@@ -84,6 +84,12 @@ gulp.task('cleanimg', function() {
 	return del(['app/img/@*'], { force: true })
 });
 
+// Code & Reload
+gulp.task('code', function() {
+	return gulp.src('app/**/*.html')
+	.pipe(browserSync.reload({ stream: true }))
+});
+
 // Deploy
 gulp.task('rsync', function() {
 	return gulp.src('app/')
@@ -98,12 +104,6 @@ gulp.task('rsync', function() {
 		silent: false,
 		compress: true
 	}))
-});
-
-// Code & Reload
-gulp.task('code', function() {
-	return gulp.src('app/**/*.html')
-	.pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('watch', function() {

@@ -1,0 +1,34 @@
+@import '../vars';
+
+main {
+
+    .site-title {
+        background: url('../img/@2x/background-image.png');
+        background-size: cover;
+        height: 110vh;
+        display: flex;
+        justify-content: center;
+
+        .site-background {
+            padding-top: 10rem;
+            text-align: center;
+            color: $white;
+        }
+
+        h1, h3 {
+            margin: 0.3rem;
+        }
+
+        .btn {
+            margin: 1.8rem;
+            background: $sky;
+
+            &:hover {
+                background: transparent;
+                border: 1px solid $white;
+                color: $white;
+            }
+        }
+    }
+
+}

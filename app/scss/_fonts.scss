@@ -22,3 +22,9 @@
 @include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
 @include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
 @include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
+
+@include font('Abel', normal, 400, '../fonts/abel-regular-webfont.woff2');
+@include font('Anton', italic, 400, '../fonts/anton-regular-webfont.woff2');
+@include font('Josefin', normal, 700, '../fonts/josefinsans-regular-webfont.woff2');
+@include font('Lexend', italic, 700, '../fonts/lexenddeca-regular-webfont.woff2');
+@include font('Livvic', italic, 700, '../fonts/livvic-regular-webfont.woff2');

@@ -1,3 +1,4 @@
+@import "reset";
 @import "vars";
 @import "fonts";
 
@@ -21,11 +22,93 @@ input, textarea {
 }
 
 body {
+    margin: 0%;
 	font-size: 16px;
 	min-width: 320px;
 	position: relative;
 	line-height: 1.65;
 	font-family: 'Roboto', sans-serif;
 	overflow-x: hidden;
-	color: $text;
+	box-sizing: border-box;
+	color: $text-gray;
+}
+
+a{
+    text-decoration: none;
+    color:  $text-gray;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+}
+
+ul{
+    list-style-type: none;
+}
+
+h1{
+    font-family: Lexend;
+    font-size: 2.5rem;
+}
+
+h2{
+    font-family: Lexend;
+    font-size: 1.6rem;
+}
+
+h3{
+    font-family: Abel;
+    font-size: 1.3rem;
+}
+
+button.btn{
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-family: Livvic;
+    cursor: pointer;
+}
+
+span{
+    font-family: Abel;
+}
+
+.container{
+    margin: 0 5vw;
+}
+
+.text-gray{
+    color: $text-gray;
+}
+
+p{
+    font-family: Lexend;
+    color: $text-light;
+}
+
+/* ----------------- OWL settings --------------- */
+section .container .owl-nav{
+    position: absolute;
+    top: 0%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.owl-nav .owl-prev .owl-nav-prev,
+.owl-nav .owl-next .owl-nav-next{
+    color: $text-gray;
+    background: transparent;
+    font-size: 2rem;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover{
+    background: transparent;
+    color: $midnight;
+}
+
+.owl-theme .owl-nav [class*='owl-']{
+    outline: none;
 }
